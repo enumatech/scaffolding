@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+echo 'Copying assets to static folder...'
+
+mkdir static/js
+echo 'Created static/js folder'
+
+cp node_modules/vue/dist/vue.{js,min.js} static/js/
+echo 'Copied Vue'
+
+cp node_modules/vue-router/dist/vue-router.{js,min.js} static/js/
+echo 'Copied Vue Router'
+
+cp node_modules/http-vue-loader/src/httpVueLoader.js static/js/
+echo 'Copied Http Vue Loader'
+
+cp node_modules/vuetify/dist/vuetify.{js,js.map,min.js} static/js/
+cp node_modules/vuetify/dist/vuetify.{css,css.map,min.css} static/css/
+echo 'Copied Vuetify'
+
+cp node_modules/@mdi/font/css/* static/css/
+cp node_modules/@mdi/font/fonts/* static/fonts/
+echo 'Copied material design fonts'
